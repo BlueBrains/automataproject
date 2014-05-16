@@ -1,0 +1,18 @@
+c:\users\molham\documents\visual studio 2012\Projects\automataProject\automataProject\bin\Debug\automataProject.exe.config
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\bin\Debug\automataProject.exe
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\bin\Debug\automataProject.pdb
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\obj\Debug\automataProject.csprojResolveAssemblyReference.cache
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\obj\Debug\automataProject.Form1.resources
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\obj\Debug\automataProject.Properties.Resources.resources
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\obj\Debug\automataProject.csproj.GenerateResource.Cache
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\obj\Debug\automataProject.exe
+C:\Users\Molham\documents\visual studio 2012\Projects\automataProject\automataProject\obj\Debug\automataProject.pdb
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\bin\Debug\automataProject.exe.config
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.exe
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.pdb
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\bin\Debug\automataProject.exe
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\bin\Debug\automataProject.pdb
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.csprojResolveAssemblyReference.cache
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.Form1.resources
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.Properties.Resources.resources
+C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.csproj.GenerateResource.Cache
