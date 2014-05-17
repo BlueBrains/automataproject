@@ -81,8 +81,10 @@ namespace automataProject
 
         private void button4_Click(object sender, EventArgs e)
         {            
-            //Method();
             string s = specification[specification.Length - 1];
+            //s.Replace("(", " ( ");
+            //s.Replace(")", " ) ");
+            MessageBox.Show(s);
             try
             {
             RegexOptions options = RegexOptions.None;
@@ -93,7 +95,7 @@ namespace automataProject
                 ElecSystemLexical.lineOfTokens = s.Split(' ');
                 method();
             }
-            catch (Exception eee)
+            catch (Exception exc)
             {
                 MessageBox.Show("Please re-enter you electric circuit and be carful to add 'SPACES' at end of each OPRANDS or BRACKETS",
                 "Format Error",
@@ -162,6 +164,22 @@ namespace automataProject
             form2.Controls.Add(mygraph.viewr);
             mygraph.Next("q1");
             form2.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string s = specification[specification.Length - 1];
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex(@"[ ]{2,}", options);
+            s = regex.Replace(s, @" ");
+            if (s[s.Length - 1] == ' ')
+                s = s.Substring(0, s.Length - 1);
+            ElecSystemLexical.lineOfTokens = s.Split(' ');            
+            ElecSystemParser.done = false;
+            Stack<string> stack = new Stack<string>();
+            ElecSystemParser.trys("q0", 0, 0, stack);
+            ElecSystemLexical.i = -1;
+            MessageBox.Show(ElecSystemParser.done.ToString());
         }
     }
 	

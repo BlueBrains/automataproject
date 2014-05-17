@@ -56,14 +56,16 @@ namespace automataProject
         
         public static Token currentToken() 
         {
-            if (imageToken() == "ser" || imageToken() == "par")
-                return new Token(false,false,false,false,true);
+            if (imageToken() == "ser" )
+                return new Token(false, false, false, false, true, false);
+            else if ( imageToken() == "par")
+                return new Token(false, false, false, false, false, true);
             else if(imageToken() == "(")
-                return new Token(false, false, true, false, false);
+                return new Token(false, false, true, false, false, false);
             else if (imageToken() == ")")
-                return new Token(false, false, false, true, false);
+                return new Token(false, false, false, true, false, false);
             else if(Char.IsLetter(imageToken()[0]))
-                return new Token(true, false, false, false, false);
+                return new Token(true, false, false, false, false, false);
             else if(Char.IsDigit(imageToken()[0]))
             {
                 int q = 1;
@@ -81,7 +83,7 @@ namespace automataProject
                     else
                         throw new OutOfLanguageTokens();
                 }
-                    return new Token(false, true, false, false, false);
+                    return new Token(false, true, false, false, false, false);
             }
             else
                 throw new OutOfLanguageTokens();                
@@ -95,15 +97,16 @@ namespace automataProject
 
     public struct Token {
 
-        public bool R , V , openBracket , closeBracket , T;
+        public bool R , V , openBracket , closeBracket , TS, TP;
 
-        public Token (bool R,bool V,bool openBracket, bool closeBracket, bool T)
+        public Token (bool R,bool V,bool openBracket, bool closeBracket, bool TS, bool TP)
         {
             this.R = R;
             this.V = V;
             this.openBracket = openBracket;
             this.closeBracket = closeBracket;
-            this.T = T;
+            this.TS = TS;
+            this.TP = TP;
         }
         
     }
