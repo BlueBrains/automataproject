@@ -162,11 +162,23 @@ namespace automataProject
         
         private void button3_Click(object sender, EventArgs e)
         {
-            string[][] Edges = { new string[] { "q0", "q1", "e" }, new string[] { "q0", "q2", "b" }, new string[] { "q1", "q3", "e" }, new string[] { "q2", "q3", "b" } };
+			string[][] Edges = { new string[] {"q0","q1","?"},
+				new string[] {"q1","q1","E"},
+				new string[] {"q1","q2","iel,iel/E"},
+				new string[] {"q2","f","E,Z/E"},
+				new string[] {"q2","q1","E"},
+				new string[] {"q1","q3","So???"},
+				new string[] {"q3","q1","E"},
+				new string[] {"q1","q4","Par,Bar/E"},
+				new string[] {"q4","q1","E"},
+				new string[] {"q1","q5","C,C/E"},
+				new string[] {"q5","q1","E"},
+				new string[] {"q1","q6","l,l/E"},
+				new string[] {"q6","q1","E"},
+				new string[] {"q6","f","E,Z/E"} };
             Graph mygraph = new Graph(Edges);
             Form form2 = new Form();
             form2.Controls.Add(mygraph.viewr);
-            mygraph.Next("q1");
             form2.Show();
         }
 

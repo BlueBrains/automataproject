@@ -12,6 +12,7 @@ namespace automataProject
     {
         private Microsoft.Glee.Drawing.Graph myGraph = new Microsoft.Glee.Drawing.Graph("Automata");
         private Node Current;
+		private Node Final;
         public GViewer viewr = new GViewer();
 
         public Graph(string[][] Edges)
@@ -23,6 +24,8 @@ namespace automataProject
             Node n1 = myGraph.FindNode(Edges[0][0]);
             n1.Attr.Color = Color.Aqua;
             Current = n1;
+			Final = myGraph.FindNode("f");
+			Final.Attr.Shape = Shape.DoubleCircle;
             viewr.Graph = myGraph;
             viewr.Dock = System.Windows.Forms.DockStyle.Fill;
 
