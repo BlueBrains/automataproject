@@ -51,7 +51,7 @@ namespace automataProject
         }
         public static void nextToken() 
         {            
-            i++;        
+            i++;
         }
         
         public static Token currentToken() 

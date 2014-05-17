@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections;
-
+using System.Text.RegularExpressions;
 namespace automataProject
 {
     public partial class Form1 : Form
     {
+        string[] specification = null;
         public Form1()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            string[] specification = null;
+        {            
             if (fromFile.Checked) {
                 string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + Path.DirectorySeparatorChar + "testfile.txt";
                 if (!File.Exists(filePath))
@@ -55,16 +55,103 @@ namespace automataProject
             
             int line = 0;
             ElecSystemLexical.resistances.Clear();
-            while (specification[line] != "circuit")
+            try
             {
-                ElecSystemLexical.lineOfTokens = specification[line].Split(' ');
-                ElecSystemLexical.automataOne();
-                line++;
+                while (specification[line] != "circuit")
+                {
+                    ElecSystemLexical.lineOfTokens = specification[line].Split(' ');                    
+                    ElecSystemLexical.automataOne();
+                    line++;
+                }
+            }
+            catch (OutOfAutomataOne exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            catch (OutOfLanguageTokens exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {            
+            //Method();
+            string s = specification[specification.Length - 1];
+            try
+            {
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex(@"[ ]{2,}", options);
+            s = regex.Replace(s, @" ");
+            if (s[s.Length-1]==' ')
+                s = s.Substring(0,s.Length -1);
+                ElecSystemLexical.lineOfTokens = s.Split(' ');
+                method();
+            }
+            catch (Exception eee)
+            {
+                MessageBox.Show("Please re-enter you electric circuit and be carful to add 'SPACES' at end of each OPRANDS or BRACKETS",
+                "Format Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+            }            
+        }
+        public void method()
+        {
+            Stack<String> operation = new Stack<String>();
+            Stack<Double> values = new Stack<Double>();
+            Stack<Char> brackets = new Stack<Char>();  
+            while (ElecSystemLexical.i < ElecSystemLexical.lineOfTokens.Length-1)
+	            {
+                    ElecSystemLexical.nextToken();
+                    if (ElecSystemLexical.currentToken().R)
+                    {
+                        if ((brackets.Count == 0) && (operation.Count != 0))
+                            values.Push(calculate(values.Pop(), ElecSystemLexical.resistances[ElecSystemLexical.imageToken()], operation.Pop()));
+                        else
+                            values.Push(ElecSystemLexical.resistances[ElecSystemLexical.imageToken()]);
+                    }
+
+                        else if (ElecSystemLexical.currentToken().openBracket)
+                        {
+                            brackets.Push(ElecSystemLexical.imageToken()[0]);
+                            operation.Push(ElecSystemLexical.imageToken());
+                        }
+                        else if (ElecSystemLexical.currentToken().closeBracket)
+                        {
+                            brackets.Pop();
+                            String u = operation.Pop();
+                            while (u != "(")
+                            {
+                                values.Push(calculate(values.Pop(), values.Pop(), u));
+                                u = operation.Pop();
+                            }
+                        }
+                        else
+                            operation.Push(ElecSystemLexical.imageToken());
+                    }
+
+
+            while (operation.Count != 0)
+            {
+                values.Push(calculate(values.Pop(), values.Pop(), operation.Pop()));
+            }
+            ElecSystemLexical.i = -1;
+            MessageBox.Show(values.Pop().ToString());
+        }
+
+        Double calculate(Double X, Double Y, String op)
+        {
+            if (op == "ser")
+                return X + Y;
+            else
+                return (X * Y) / (X + Y);
 
         }
     }
