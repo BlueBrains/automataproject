@@ -59,6 +59,11 @@ namespace automataProject
             {
                 while (specification[line] != "circuit")
                 {
+                    RegexOptions options = RegexOptions.None;
+                    Regex regex = new Regex(@"[ ]{2,}", options);
+                    specification[line] = regex.Replace(specification[line], @" ");
+                    if (specification[line][specification[line].Length - 1] == ' ')
+                        specification[line] = specification[line].Substring(0, specification[line].Length - 1);
                     ElecSystemLexical.lineOfTokens = specification[line].Split(' ');                    
                     ElecSystemLexical.automataOne();
                     line++;
@@ -83,8 +88,7 @@ namespace automataProject
         {            
             string s = specification[specification.Length - 1];
             //s.Replace("(", " ( ");
-            //s.Replace(")", " ) ");
-            MessageBox.Show(s);
+            //s.Replace(")", " ) ");           
             try
             {
             RegexOptions options = RegexOptions.None;
@@ -92,8 +96,8 @@ namespace automataProject
             s = regex.Replace(s, @" ");
             if (s[s.Length-1]==' ')
                 s = s.Substring(0,s.Length -1);
-                ElecSystemLexical.lineOfTokens = s.Split(' ');
-                method();
+            ElecSystemLexical.lineOfTokens = s.Split(' ');
+            method();
             }
             catch (Exception exc)
             {

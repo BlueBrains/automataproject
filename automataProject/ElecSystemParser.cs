@@ -114,7 +114,7 @@ namespace automataProject
                             case "id":
                                 {
                                     ElecSystemLexical.i = x;
-                                    if (ElecSystemLexical.currentToken().R)
+                                    if (ElecSystemLexical.currentToken().R && ElecSystemLexical.resistances.ContainsKey( ElecSystemLexical.imageToken() ))
                                     {
                                         stack.Pop();
                                         x = x + 1;
