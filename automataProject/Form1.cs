@@ -153,8 +153,8 @@ namespace automataProject
             else
                 return (X * Y) / (X + Y);
         }
-    }
-	private void button3_Click(object sender, EventArgs e)
+        
+        private void button3_Click(object sender, EventArgs e)
         {
             string[][] Edges = { new string[] { "q0", "q1", "e" }, new string[] { "q0", "q2", "b" }, new string[] { "q1", "q3", "e" }, new string[] { "q2", "q3", "b" } };
             Graph mygraph = new Graph(Edges);
@@ -162,6 +162,10 @@ namespace automataProject
             form2.Controls.Add(mygraph.viewr);
             mygraph.Next("q1");
             form2.Show();
+        }
+    }
+	
+    
     public class FileNotFound : Exception
     {
         public FileNotFound()
@@ -169,4 +173,5 @@ namespace automataProject
         {
         }
     }
+
 }
