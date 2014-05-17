@@ -16,3 +16,17 @@ C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\autom
 C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.Form1.resources
 C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.Properties.Resources.resources
 C:\Users\Molham\Documents\GitHub\automataProject\automataProject\obj\Debug\automataProject.csproj.GenerateResource.Cache
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\automataProject.exe.config
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\automataProject.exe
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\automataProject.pdb
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\Microsoft.GLEE.dll
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\Microsoft.GLEE.Drawing.dll
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\Microsoft.GLEE.GraphViewerGDI.dll
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\Microsoft.GLEE.pdb
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\Microsoft.GLEE.Drawing.pdb
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\bin\Debug\Microsoft.GLEE.GraphViewerGDI.pdb
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\obj\Debug\automataProject.Form1.resources
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\obj\Debug\automataProject.Properties.Resources.resources
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\obj\Debug\automataProject.csproj.GenerateResource.Cache
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\obj\Debug\automataProject.exe
+C:\Users\PACKARD BELL\Documents\Visual Studio 2012\Projects\automataproject\automataProject\obj\Debug\automataProject.pdb
