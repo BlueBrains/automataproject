@@ -31,18 +31,18 @@ namespace automataProject
                 {
                     if (imageToken().Contains("e-"))
                     {
-                        int num = int.Parse(imageToken().Substring(0, imageToken().IndexOf("e")));
-                        int E = int.Parse(imageToken().Substring(imageToken().IndexOf("-") + 1, imageToken().Length - (imageToken().IndexOf("-") + 1) ));
+                        double num = double.Parse(imageToken().Substring(0, imageToken().IndexOf("e")));
+                        double E = double.Parse(imageToken().Substring(imageToken().IndexOf("-") + 1, imageToken().Length - (imageToken().IndexOf("-") + 1)));
                         resistances.Add(temp, num * Math.Pow(10, -E));
                     }
                     else if (imageToken().Contains("e"))
                     {
-                        int num = int.Parse(imageToken().Substring(0, imageToken().IndexOf("e")));
-                        int E = int.Parse(imageToken().Substring(imageToken().IndexOf("e") + 1, imageToken().Length - (imageToken().IndexOf("e") + 1) ));
+                        double num = double.Parse(imageToken().Substring(0, imageToken().IndexOf("e")));
+                        double E = double.Parse(imageToken().Substring(imageToken().IndexOf("e") + 1, imageToken().Length - (imageToken().IndexOf("e") + 1)));
                         resistances.Add(temp, num * Math.Pow(10, E));
                     }
                     else
-                        resistances.Add(temp, int.Parse(imageToken()));
+                        resistances.Add(temp, double.Parse(imageToken()));
                 }
                 else
                     throw new OutOfAutomataOne();
